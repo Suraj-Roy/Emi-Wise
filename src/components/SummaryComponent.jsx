@@ -30,7 +30,6 @@ export default function SummaryComponent({ userInputProps, emiBreakup }) {
   } else if(emiBreakup && emiBreakup.length > 0) {
     if (inputClosure.month === 0) {
       for (let items of emiBreakup) {
-        console.log(items)
         totalGst += +items.gst;
         totalInterest += +items.interest;
       }
@@ -40,7 +39,6 @@ export default function SummaryComponent({ userInputProps, emiBreakup }) {
         totalInterest += +emiBreakup[i].interest;
         principal += +emiBreakup[i].principal;
       }
-      console.log(principal);
       foreClosureCharge = (+userInputProps.amount - principal) * 0.03;
       foreclosureGst = foreClosureCharge * 0.18;
       intOfForMonth = +emiBreakup[+inputClosure.month - 1].interest;
